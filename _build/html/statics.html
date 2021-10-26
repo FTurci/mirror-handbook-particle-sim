@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static correlation functions &#8212; Handbook of Particle-Based Simulation of Fluids</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dynamic correlation functions" href="dynamics.html" />
+    <link rel="prev" title="Supercooled liquids" href="supercooled.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Handbook of Particle-Based Simulation of Fluids</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing-page.html">
+   Handbook of Particle-Based Simulation of Liquids and Glasses
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Jupyter notebook: first ride
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="brownian.html">
+   Brownian dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rw.html">
+   Random walk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="saw.html">
+   Self-avoiding walk (SAW)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dna.html">
+   Force-extension relation in DNA chains
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fit.html">
+   Least-square fits with python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interactions.html">
+   Van der Waals interactions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="supercooled.html">
+   Supercooled liquids
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Static correlation functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamics.html">
+   Dynamic correlation functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="active.html">
+   Active Brownian particles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/statics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/statics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="static-correlation-functions">
+<h1>Static correlation functions<a class="headerlink" href="#static-correlation-functions" title="Permalink to this headline">¶</a></h1>
+<p>We will consider classical systems composed of <span class="math notranslate nohighlight">\(N\)</span> particles interacting via a pairwise potential <span class="math notranslate nohighlight">\(u(r)\)</span>. One first model is based on the Lennard-Jones potential</p>
+<div class="math notranslate nohighlight">
+\[
+u(r) = 4\epsilon \left[(\frac{\sigma}{r})^{12} - (\frac{\sigma}{r})^6\right]
+\]</div>
+<p>which provides a good description of the properties of nobel gases (Ar, Xe, Ne). In addition, we will cosnider the so-called Gaussian core model, in which particles interact via a Gaussian potential</p>
+<div class="math notranslate nohighlight">
+\[
+u(r) = \epsilon \exp{[- (r/\sigma)^2]}
+\]</div>
+<p>The Gaussian core model describes the effective interactions between dilute linear polymer chains in good solvent (note that \epsilon is considered here as a constant, i.e., it does not scale with <span class="math notranslate nohighlight">\(k_B T\)</span>).</p>
+<p>We will analyze several “trajectories” obtained from molecular dynamics simulations performed in the microcanonical ensemble, at different density and total energy conditions. Energies and lengths are measured in units of <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, respectively. The following values provide a good description of the properties of Argon using the Lennard-Jones potential: <span class="math notranslate nohighlight">\(\epsilon\approx 120 K\)</span> and <span class="math notranslate nohighlight">\(\sigma \approx 3.4\times 10^{-10}m\)</span>.</p>
+<p>Our goal is to characterize the thermodynamic and structural properties of the system using static correlation functions. Statistical averages will be carried out by averaging the quantities of interest over time. To this end, we will the <a class="reference external" href="https://framagit.org/atooms/atooms/tree/master">atooms</a> python package and its companion <a class="reference external" href="https://framagit.org/atooms/postprocessing/tree/master">postprocessing</a> package, which will help us analyzing the trajectories in a simple, pythonic way.</p>
+<p>Should you need some more info about to the workings of <code class="docutils literal notranslate"><span class="pre">atooms</span></code> and <code class="docutils literal notranslate"><span class="pre">postprocessing</span></code>, which we will use for trajectory analysis, <a class="reference external" href="https://coulomb.umontpellier.fr/perso/daniele.coslovich/atooms/">this tutorial</a> and <a class="reference external" href="https://coulomb.umontpellier.fr/perso/daniele.coslovich/pp_notebook/">this other tutorial</a> might be useful.</p>
+<p>First off, we download a sample trajectory file (in so-called xyz format) and store it in the current directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">atooms.core.utils</span> <span class="kn">import</span> <span class="n">download</span>
+
+<span class="n">download</span><span class="p">(</span><span class="s1">&#39;https://framagit.org/atooms/atooms/raw/master/data/trajectory.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trajectories are list-like objects that can be iterated upon. Each frame of the trajectory contains a <code class="docutils literal notranslate"><span class="pre">System</span></code>, which is composed by a list of <code class="docutils literal notranslate"><span class="pre">Particle</span></code> objects and a simulation <code class="docutils literal notranslate"><span class="pre">Cell</span></code> (periodic boundary conditions were used in the used during the simulation). Type <code class="docutils literal notranslate"><span class="pre">help(system)</span></code> to get the full list of its properties.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">atooms.trajectory</span> <span class="kn">import</span> <span class="n">Trajectory</span>
+
+<span class="c1"># Open the trajectory and read the system at the last frame</span>
+<span class="k">with</span> <span class="n">Trajectory</span><span class="p">(</span><span class="s1">&#39;trajectory.xyz&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">th</span><span class="p">:</span>
+    <span class="n">system</span> <span class="o">=</span> <span class="n">th</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Count how many particles we have and print the side of the simulation cell</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">particle</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">side</span><span class="p">)</span>
+
+<span class="c1"># Print the density and kinetic temperature at the last frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">density</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">temperature</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have a look at the spatial structure of the system using the <a class="reference external" href="https://pypi.org/project/py3Dmol/">py3dmol</a> visualization package, which <code class="docutils literal notranslate"><span class="pre">atooms</span></code> can use as a visualization backend</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;3dmol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, let’s use some <code class="docutils literal notranslate"><span class="pre">postprocessing</span></code> tools to compute static correlation functions (here the radial distribution function <span class="math notranslate nohighlight">\(g(r)\)</span>) and plot them</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">atooms.postprocessing</span> <span class="k">as</span> <span class="nn">pp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">gr</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">RadialDistributionFunction</span><span class="p">(</span><span class="s1">&#39;trajectory.xyz&#39;</span><span class="p">)</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gr</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="n">gr</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, we can compute the static structure factor <span class="math notranslate nohighlight">\(S(k)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the nk parameter to change the number of wave-vectors </span>
+<span class="c1"># to carry out the spherical average</span>
+<span class="c1"># nk=200 should be fine</span>
+<span class="n">sk</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">StructureFactor</span><span class="p">(</span><span class="s1">&#39;trajectory.xyz&#39;</span><span class="p">,</span> <span class="n">nk</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">sk</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sk</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="n">sk</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 1</strong>: <em>trajectory analysis</em></p>
+<p>Download and analyze the following three trajectories for a single-component Lennard-Jones system:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/367456/mod_folder/content/0/lj_1.xyz">https://moodle2.units.it/pluginfile.php/367456/mod_folder/content/0/lj_1.xyz</a></p></li>
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/367456/mod_folder/content/0/lj_2.xyz">https://moodle2.units.it/pluginfile.php/367456/mod_folder/content/0/lj_2.xyz</a></p></li>
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/367456/mod_folder/content/0/lj_3.xyz">https://moodle2.units.it/pluginfile.php/367456/mod_folder/content/0/lj_3.xyz</a></p></li>
+</ul>
+<p>For each of them, visualize the system at the initial and final frame, extract information about the thermodynamic state of the system and its structure.</p>
+<p>As a reference, here is the phase diagram of the LJ system in the <span class="math notranslate nohighlight">\(\rho,T\)</span> diagram (source: Johnson et al. Mol. Phys. 78, 591 (1993))</p>
+<p><img alt="lj_phase.png" src="attachment:lj_phase.png" /></p>
+<p>Here are a few questions to guide you in the analysis:</p>
+<ul class="simple">
+<li><p>Which phase is the system in?</p></li>
+<li><p>How do the <span class="math notranslate nohighlight">\(g(r)\)</span> and <span class="math notranslate nohighlight">\(S(k)\)</span> look like?</p></li>
+<li><p>How would you tell if the system is at equilibrium or not?</p></li>
+</ul>
+<p><strong>Exercise 2</strong>: <em>local structure</em></p>
+<ul class="simple">
+<li><p>Estimate the coordination number <span class="math notranslate nohighlight">\(N_1\)</span> of the Lennard-Jones liquid from the integral of the <span class="math notranslate nohighlight">\(g(r)\)</span> over the first shell of neighbors (pick up the “right” trajectory from the ones above).</p></li>
+<li><p>Extract a <code class="docutils literal notranslate"><span class="pre">system</span></code> from a trajectory frame and use the code below to visualize the first coordination shell of particle <code class="docutils literal notranslate"><span class="pre">0</span></code>. Adapt the code to visualize the second shell of neighbors.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">atooms.system</span> <span class="kn">import</span> <span class="n">System</span>
+
+<span class="c1"># Cutoff distance for the first shell of neighbors</span>
+<span class="n">r_1</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+<span class="c1"># Gather neighbors in the first coordination shell</span>
+<span class="n">particle</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">particle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">shell</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">particle</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">other</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">particle</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">particle</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">system</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  
+        <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">r_1</span><span class="p">:</span>
+            <span class="n">neighbor</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">nearest_image</span><span class="p">(</span><span class="n">particle</span><span class="p">,</span> <span class="n">system</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">shell</span><span class="o">.</span><span class="n">particle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+
+<span class="c1"># Now center the cluster at the origin for better visualization</span>
+<span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">shell</span><span class="o">.</span><span class="n">particle</span><span class="p">:</span>
+    <span class="n">neighbor</span><span class="o">.</span><span class="n">position</span> <span class="o">-=</span> <span class="n">particle</span><span class="o">.</span><span class="n">position</span>
+
+<span class="c1"># Show the shell of neighbors</span>
+<span class="n">shell</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s1">&#39;3dmol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise 3</strong>: <em>thermodynamic properties</em></p>
+<p>Use the expression seen in class to estimate the isothermal compressibility <span class="math notranslate nohighlight">\(\chi_T\)</span> of the Lennard-Jones liquid from the <span class="math notranslate nohighlight">\(k\rightarrow 0\)</span> limit of the structure factor <span class="math notranslate nohighlight">\(S(k)\)</span>. Convert the result in Argon units and comment.</p>
+<p><strong>Exercise 4</strong>: <em>static correlation length</em></p>
+<p>To see how far local density fluctuations are correlated in a liquid, estimate the microscopic correlation length <span class="math notranslate nohighlight">\(\xi_0\)</span> from the decay of the long range oscillations of the total distribution function <span class="math notranslate nohighlight">\(h(r) = g(r) - 1\)</span>. To do this, plot <span class="math notranslate nohighlight">\(|\log(h(r))|\)</span> vs <span class="math notranslate nohighlight">\(r\)</span> and “fit” the envelope of the peaks to the following functional form
+$<span class="math notranslate nohighlight">\(
+h(r) \sim \frac{\exp(-r/\xi_0)}{r}
+\)</span>$</p>
+<p><em>Hint</em>: do not try to fit the envelope with <code class="docutils literal notranslate"><span class="pre">curve_fit()</span></code>, it is enough to adjust the parameter <span class="math notranslate nohighlight">\(\xi_0\)</span> by hand!</p>
+<p><strong>Exercise 5</strong>: <em>Gaussian core model</em></p>
+<p>Download and analyze the following trajectories for the Gaussian core model</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho0.1.xyz">https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho0.1.xyz</a></p></li>
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho0.2.xyz">https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho0.2.xyz</a></p></li>
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho0.4.xyz">https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho0.4.xyz</a></p></li>
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho1.0.xyz">https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho1.0.xyz</a></p></li>
+<li><p><a class="reference external" href="https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho2.0.xyz">https://moodle2.units.it/pluginfile.php/368787/mod_folder/content/0/gcm_rho2.0.xyz</a></p></li>
+</ul>
+<p>The temperature is constant <span class="math notranslate nohighlight">\(T\approx 0.01\)</span> (in reduced units) and the density is varied from <span class="math notranslate nohighlight">\(\rho=0.1 to 2.0\)</span>. Compute the and plot <span class="math notranslate nohighlight">\(g(r)\)</span> as a function of density. Which peculiar features do you notice? How would you describe the bevahior of the <span class="math notranslate nohighlight">\(g(r)\)</span> at high density? For reference, here is the phase diagram computed by Lang et al. J. Phys.: Condens. Matter 12, 5087 (2000)</p>
+<p><img alt="gcm.png" src="attachment:gcm.png" /></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="supercooled.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Supercooled liquids</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="dynamics.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Dynamic correlation functions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

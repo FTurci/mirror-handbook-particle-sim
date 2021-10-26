@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self-avoiding walk (SAW) &#8212; Handbook of Particle-Based Simulation of Fluids</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Van der Waals interactions" href="interactions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Handbook of Particle-Based Simulation of Fluids</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing-page.html">
+   Handbook of Particle-Based Simulation of Liquids and Glasses
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Intorduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Jupyter notebook: first ride
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statics.html">
+   Static correlation functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="supercooled.html">
+   Supercooled liquids
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="active.html">
+   Active Brownian particles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rw.html">
+   Random walk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="brownian.html">
+   Brownian dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dna.html">
+   Force-extension relation in DNA chains
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamics.html">
+   Dynamic correlation functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fit.html">
+   Least-square fits with python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interactions.html">
+   Van der Waals interactions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Self-avoiding walk (SAW)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/saw.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/saw.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="self-avoiding-walk-saw">
+<h1>Self-avoiding walk (SAW)<a class="headerlink" href="#self-avoiding-walk-saw" title="Permalink to this headline">¶</a></h1>
+<p>We simulate a self-avoiding walk (SAW) on a square lattice. Each walk represents a possible conformation of a polymer composed of <span class="math notranslate nohighlight">\(N\)</span> monomers. We use a simple Monte Carlo algorithm to sample the possible conformations of the polymer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+
+<span class="c1"># Model parameters</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Setup initial configuration as a long linear chain wrapped around the boundaries</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="n">y</span>
+        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">],</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae526c2130&gt;]
+</pre></div>
+</div>
+<img alt="_images/saw_1_1.png" src="_images/saw_1_1.png" />
+</div>
+</div>
+<p>Now we update the walk using a simple Monte Carlo algorithm. At every step, we try to remove the monomer from the tail (head) and attach it to the head (tail), accepting new conformations if satify the self-avoidance constraint but retaining the old ones if they don’t.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick up first monomer</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
+    <span class="c1"># Either take the first particle and add it to the tail (drop=0, insert=-1)</span>
+    <span class="c1"># or the opposite (drop=-1, insert=0)</span>
+    <span class="n">drop</span><span class="p">,</span> <span class="n">insert</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+    <span class="c1"># Attempt to put the particle at position `pos`</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">positions</span><span class="p">[</span><span class="n">insert</span><span class="p">][:]</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+    
+    <span class="c1"># If the new site is empty, add the particle</span>
+    <span class="k">if</span> <span class="n">matrix</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">drop</span><span class="p">)</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">new</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">new</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">pos</span>
+
+        <span class="c1"># Either add to the head or the tail</span>
+        <span class="k">if</span> <span class="n">insert</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">positions</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+       
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">],</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae5242bc40&gt;]
+</pre></div>
+</div>
+<img alt="_images/saw_3_1.png" src="_images/saw_3_1.png" />
+</div>
+</div>
+<p><strong>Exercise 1</strong>: <em>Equilibration</em></p>
+<p>How many steps are required to “equilibrate” the SAW? To get a feeling, execute the blocks above several times until <em>by visual inspection</em> the SAW looses memory of its initial shape. Keep track of the total number of equilibration steps for <span class="math notranslate nohighlight">\(N=10, 100, 1000\)</span>. What do you observe?</p>
+<p><strong>Exercice 2</strong>: <em>Flory exponent</em></p>
+<p>Compute the root-mean-square end-to-end vector <span class="math notranslate nohighlight">\(R\equiv {\langle |\vec{R}|^2\rangle}^{1/2}\)</span> for several <span class="math notranslate nohighlight">\(N\)</span> in the interval <span class="math notranslate nohighlight">\([10, 500]\)</span> and estimate the Flory exponent <span class="math notranslate nohighlight">\(\nu\)</span> defined by the relation
+$<span class="math notranslate nohighlight">\(R \sim N^\nu\)</span><span class="math notranslate nohighlight">\(
+Compare your numerical results to the Flory argument for a SAW in \)</span>d=2$ spatial dimensions,</p>
+<p><em>Hint 1</em>: do not forget to ignore the conformations sampled during the equilibration phase!</p>
+<p><em>Hint 2</em>: you may want to encapsulate the blocks above into separate functions that initialize and update the SAW respectively.</p>
+<p><em>To go beyond</em>: Adapt the code to generate SAWs in <span class="math notranslate nohighlight">\(d=3\)</span>. Find the Flory exponent and compare it to the Flory argument (<span class="math notranslate nohighlight">\(\nu=3/5\)</span>) and to the result of renormalization group theory (<span class="math notranslate nohighlight">\(\nu=0.588\)</span>). In order to actually favor one theoretical prediction over the other, high quality data are needed and it is recommended to perform the simulations in a more efficient language such as C, Fortran or Julia. If you want to keep using python you may want to try <code class="docutils literal notranslate"><span class="pre">f2py</span></code> or <code class="docutils literal notranslate"><span class="pre">f2py-jit</span></code> (to integrate Fortran 90 in python) or <code class="docutils literal notranslate"><span class="pre">numba</span></code> (to compile python just-in-time!) or related tools.</p>
+<p><strong>Exercice 3</strong>: <em>fractal dimension</em> <span class="math notranslate nohighlight">\(D\)</span></p>
+<p>Measure the fractal dimension of a SAW in <span class="math notranslate nohighlight">\(d=2\)</span> dimensions using the relation
+$<span class="math notranslate nohighlight">\(
+\langle N(r)\rangle \sim r^D
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>N(r)$ is the number of particles in a circle of radius centered on the polymer center of mass. Compare to the theoretical expectation based on the Flory argument.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="interactions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Van der Waals interactions</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

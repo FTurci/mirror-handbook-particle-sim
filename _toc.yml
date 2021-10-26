@@ -1,0 +1,16 @@
+# In _toc.yml
+format: jb-book
+root: landing-page
+chapters:
+- file: introduction
+- file: start
+- file: brownian
+- file: rw
+- file: saw
+- file: dna
+- file: fit
+- file: interactions
+- file: supercooled
+- file: statics
+- file: dynamics
+- file: active

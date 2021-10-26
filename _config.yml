@@ -1,0 +1,5 @@
+# in _config.yml
+title: "Handbook of Particle-Based Simulation of Fluids"
+logo: images/logo.svg
+execute:
+  execute_notebooks: "off"
