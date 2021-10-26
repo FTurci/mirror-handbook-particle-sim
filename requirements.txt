@@ -1,0 +1,7 @@
+numpy
+jupyter
+matplotlib
+scipy
+atooms~=2.5.3
+atooms-pp
+py3dmol
