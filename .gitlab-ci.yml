@@ -1,0 +1,9 @@
+pages:
+  artifacts:
+    paths:
+      - public
+  script:
+    - mkdir -p public
+    - mv _build/* public/
+  only:
+    - master
