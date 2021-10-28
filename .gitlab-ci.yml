@@ -6,4 +6,4 @@ pages:
     - mkdir -p public
     - mv _build/* public/
   only:
-    - master
+    - main
