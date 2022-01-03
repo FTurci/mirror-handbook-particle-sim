@@ -1,5 +1,6 @@
-innumpy
+numpy
 jupyter
+jupyter-book
 matplotlib
 scipy
 atooms>=3.3.4
