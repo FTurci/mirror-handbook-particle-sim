@@ -1,7 +1,8 @@
-numpy
+innumpy
 jupyter
 matplotlib
 scipy
-atooms~=2.5.3
+atooms>=3.3.4
 atooms-pp
+atooms-dynamics
 py3dmol
