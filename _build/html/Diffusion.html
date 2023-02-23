@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Diffusion &#8212; Handbook of Particle-Based Simulation of Fluids</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Handbook of Particle-Based Simulation of Fluids</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="landing-page.html">
+                    Handbook of Particle-Based Simulation of Fluid
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Jupyter notebook: first ride
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="brownian.html">
+   Brownian dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rw.html">
+   Random walk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="saw.html">
+   Self-avoiding walk (SAW)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dna.html">
+   Force-extension relation in DNA chains
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fit.html">
+   Least-square fits with python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interactions.html">
+   Van der Waals interactions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="supercooled.html">
+   Supercooled liquids
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statics.html">
+   Static correlation functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamics.html">
+   Dynamic correlation functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="active.html">
+   Active Brownian particles
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Diffusion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Diffusion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-random-walk">
+   Discrete random walk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-dimensional-case">
+     One-dimensional case
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#average-position-and-standard-deviation">
+       Average position and standard deviation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-and-higher-dimensional-case">
+     Two and higher dimensional case
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#langevin-equation">
+   Langevin equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-in-liquids">
+   Diffusion in liquids
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Diffusion</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-random-walk">
+   Discrete random walk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-dimensional-case">
+     One-dimensional case
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#average-position-and-standard-deviation">
+       Average position and standard deviation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-and-higher-dimensional-case">
+     Two and higher dimensional case
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#langevin-equation">
+   Langevin equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diffusion-in-liquids">
+   Diffusion in liquids
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="diffusion">
+<h1>Diffusion<a class="headerlink" href="#diffusion" title="Permalink to this headline">#</a></h1>
+<p>In the <em>De Rerum Natura</em> (Book II) Lucretius (c. 99 – c. 55 BC) attempts to demonstrate the existence of atoms through the observation of the jittering motion of dust particles in the air. He notices their random, unpredictable, <em>stochastic</em> motion: the particles do not move in straight or regular lines, and instead a <em>chaotic</em> movement is observed. This demonstrates, in Lucretius’s eyes, the key role pllayed by chaos in the emergence of the world as we know it.</p>
+<p>Much later, similar observations on the haphazard motion of pollen and dust in water were made by Scottish botanist Robert Brown in th 19th century, from whom the term of <em>Brownian motion</em> traces its origin.</p>
+<p>The description of this <em>unpredictable</em> kind of motion requires to make steps towards a probabilistic physical description. This connects the motion of invidual particles (which can be deterministic) to the motion of collections of particles, which is described statistically.</p>
+<p>For example, a collection of particles can be characterised by their spatial concentration <span class="math notranslate nohighlight">\(c=N/V\)</span> as their number <span class="math notranslate nohighlight">\(N\)</span> per unit volume <span class="math notranslate nohighlight">\(V\)</span>. Imagine that we have a monoatomic gas composed of <span class="math notranslate nohighlight">\(N\)</span> atoms in the initial volume <span class="math notranslate nohighlight">\(V_i\)</span> and that we subsequently expand the volume to the final value <span class="math notranslate nohighlight">\(V_f\)</span>. The atoms will move, collide, change direction and the atoms will spntaneously occupy all space, in virtue of the second  law of thermodyamnics. But what happenes to their concentration? In the simplest scenario, the atoms wil follow the <em>diffusion equation</em> also known as Fick’s second law</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial c}{\partial t} = D \nabla^2 c,\]</div>
+<p>where <span class="math notranslate nohighlight">\(D\)</span> is known as the <strong>diffusion coefficient</strong> and <span class="math notranslate nohighlight">\(\nabla^2\)</span> is the Laplacian operator. This equation can be derived using a simple model: <em>Brownian motion</em>.</p>
+<section id="discrete-random-walk">
+<h2>Discrete random walk<a class="headerlink" href="#discrete-random-walk" title="Permalink to this headline">#</a></h2>
+<section id="one-dimensional-case">
+<h3>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline">#</a></h3>
+<p>A grain of pollen immersed in a fluid like air can be thought as a large particle constantly hit by many much smaller particles that travel rapidly in all directions. At every collision, they exchange momentum with the larger particle, changing its direction of motion.</p>
+<p>The simplest possible model for this kind of movement is discrete Brownian motion.  Imagine to have a particle at position <span class="math notranslate nohighlight">\(x=0\)</span> and to discretize time by timesteps <span class="math notranslate nohighlight">\(\Delta t\)</span>. At every step, the particle can move left or right with equal probability and travels a fixed distance <span class="math notranslate nohighlight">\(l\)</span>.</p>
+<p>Hence:
+$<span class="math notranslate nohighlight">\(x_{t+\Delta t} = x_{t}+l \xi_t,\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random variable with zero average \)</span>\langle \xi_t\rangle=0<span class="math notranslate nohighlight">\( and unit variance \)</span>\langle \xi_t \xi_{t\prime}\rangle=1$.</p>
+<p>It is very easy too simulate this process in Python using just <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<p>Here we simulate a collection of <code class="docutils literal notranslate"><span class="pre">nwalkers</span></code> evolving for <code class="docutils literal notranslate"><span class="pre">nsteps</span></code> of duration <span class="math notranslate nohighlight">\(\Delta t =1\)</span> with step size <span class="math notranslate nohighlight">\(l=1\)</span> all starting from <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">walks1d</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span><span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># we generate an (nsteps x nwalkers) table of -1 or 1 values</span>
+    <span class="k">return</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># we sum the table along the nsteps axis</span>
+<span class="n">collection</span> <span class="o">=</span> <span class="n">walks</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">collection</span><span class="p">[:,:</span><span class="mi">10</span><span class="p">])</span> <span class="c1">#plot only first 10 paths</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\Delta t$&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;x/l&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_3_0.png" src="_images/Diffusion_3_0.png" />
+</div>
+</div>
+<p>As we have a <strong>collection</strong> of walks we can compute statistical descriptors.</p>
+<section id="average-position-and-standard-deviation">
+<h4>Average position and standard deviation<a class="headerlink" href="#average-position-and-standard-deviation" title="Permalink to this headline">#</a></h4>
+<p>During the evolution, the walkers get farther and farther from the original position at x=0. Their distribution becomes more and more spread out. A simple way to characterise the spreading of the distribution is to measure its first and second moments:</p>
+<ul class="simple">
+<li><p>the average position <span class="math notranslate nohighlight">\(\mu(t)\langle x\rangle(t)\)</span></p></li>
+<li><p>the standard deviation of the position <span class="math notranslate nohighlight">\(\sigma(t) = \sqrt{\langle x^2\rangle}(t)\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">collection</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;avg $\mu$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;std $\sigma$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$t/\Delta t$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_5_0.png" src="_images/Diffusion_5_0.png" />
+</div>
+</div>
+<p>Clearly, the average position fluctuates around zero compared to the characteristic standard deviation.</p>
+<p>It is interesting to look at the second moment more closely. The plot above suggests a parabolic relationship between <span class="math notranslate nohighlight">\(\sigma\)</span> and time, $<span class="math notranslate nohighlight">\(\sigma \propto \sqrt{t}.\)</span>$</p>
+<p>This can be tested using a <strong>double logarithmic plot</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sigma</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$\sigma^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$t/\Delta t$&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_7_0.png" src="_images/Diffusion_7_0.png" />
+</div>
+</div>
+<p>Thi is a characteristic of diffusive, Brownian motion. <span class="math notranslate nohighlight">\(\sigma^2(t)=\langle x^2\rangle(t)=\langle [x(t)-x(0)]^2\rangle\)</span> is the <strong>mean squared displacement (MSD)</strong>  and it scales like</p>
+<div class="math notranslate nohighlight">
+\[MSD (t)=\sigma^2 = \frac{l^2}{\Delta t} t\]</div>
+<p>We define <span class="math notranslate nohighlight">\(D=\frac{l^2}{2\Delta t}\)</span> as the <strong>diffusion coefficient</strong> so that – in this one-dimensional problem – we have</p>
+<div class="math notranslate nohighlight">
+\[MSD(t)=2D t\]</div>
+<p>Therefore a simple linear fit of the MSD allows us to retrieve the diffusion coefficient numerically:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0207794404898407
+</pre></div>
+</div>
+</div>
+</div>
+<p>which is compatible with the expected value of <span class="math notranslate nohighlight">\(D=1/2\)</span>.</p>
+<p>We have seen that the first moment is approximately zero and the second is proportional to time. What about higher moments? The entire <strong>displacement distribution</strong> <span class="math notranslate nohighlight">\(G(x,t)\)</span> at a the final time is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nwalkers</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">100000</span><span class="p">]:</span>
+    <span class="n">w</span><span class="o">=</span><span class="n">walks1d</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:],</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">w</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nwalkers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x/l&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_13_0.png" src="_images/Diffusion_13_0.png" />
+</div>
+</div>
+<p>With increasing the number of walkers the histogram convergess to a shape that is reminiscent of a Gaussian distribution. Can we numerically test this?</p>
+<p>If the displacement distribution <span class="math notranslate nohighlight">\(G(x,t)\)</span> has a Gaussian form, the only non-zero parameter is the variance and higher order moments cna be determined from it. In one dimension, one can for example test the <strong>kurtosis</strong> <span class="math notranslate nohighlight">\(\kappa = \langle x^4\rangle/\langle x^2\rangle\)</span>. For a Gaussian distribution this is <span class="math notranslate nohighlight">\(\kappa=3\)</span>.</p>
+<p>So, in one dimension, we can define a <strong>non-Gausssian</strong> parameter <span class="math notranslate nohighlight">\(\alpha\)</span></p>
+<div class="math notranslate nohighlight">
+\[\alpha_2 = \frac{\langle x^4\rangle}{3\langle x^2\rangle}-1,\]</div>
+<p>measuring deviations from Gaussian behaviour:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nwalkers</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">100000</span><span class="p">]:</span>
+    <span class="n">w</span><span class="o">=</span><span class="n">walks1d</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nwalkers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$</span><span class="se">\a</span><span class="s2">lpha_2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa1cff64d90&gt;
+</pre></div>
+</div>
+<img alt="_images/Diffusion_16_1.png" src="_images/Diffusion_16_1.png" />
+</div>
+</div>
+<p>With increasing the numeber of samples, convergence to a Gaussian is ensured. Hence, we conclude that the distribution of displacements takes the form</p>
+<div class="math notranslate nohighlight">
+\[ G(x,t)\approx2\mathcal{N}(0,\sigma^2) = \frac{2}{\sqrt{2 \pi l^{2}t /\Delta t}} \exp \left(-\frac{x^{2} \Delta t }{ 2 l^{2}t}\right) \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{N}(m,s^2)\)</span> is the normal distirbution with mean <span class="math notranslate nohighlight">\(m\)</span>  and standard deviation <span class="math notranslate nohighlight">\(s\)</span> and the factor 2 takes into account the fact that only even (odd) bins can be filled for even (odd) <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>This probability distributioon we be rewritten using the diffusion  coefficient <span class="math notranslate nohighlight">\(D\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[ G(x,t)\approx\frac{2}{\sqrt{4 \pi Dt}} \exp \left(-\frac{x^{2} }{ 4D t}\right) \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">tf</span><span class="o">=</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">tfinal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tf</span><span class="p">):</span>
+    <span class="n">w</span><span class="o">=</span><span class="n">walks1d</span><span class="p">(</span><span class="n">tfinal</span><span class="p">,</span><span class="mi">100000</span><span class="p">)</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">w</span><span class="o">.</span><span class="n">max</span><span class="p">())</span><span class="o">-</span><span class="mf">0.5</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,:],</span><span class="n">bins</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+    <span class="n">g</span> <span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">tfinal</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">tfinal</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_18_0.png" src="_images/Diffusion_18_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="two-and-higher-dimensional-case">
+<h3>Two and higher dimensional case<a class="headerlink" href="#two-and-higher-dimensional-case" title="Permalink to this headline">#</a></h3>
+<p>The generalisation of random walks to highher dimensions is straightforward.</p>
+<p>For example in two dimensions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walks2d</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span><span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> 
+    <span class="k">return</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># </span>
+
+<span class="n">nsteps</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">nwalkers</span><span class="o">=</span><span class="mi">50000</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="n">walks2d</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,:</span><span class="mi">10</span><span class="p">],</span><span class="n">w2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">,:</span><span class="mi">10</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_21_0.png" src="_images/Diffusion_21_0.png" />
+</div>
+</div>
+<p>And in three:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walks3d</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span><span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> 
+    <span class="k">return</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+
+<span class="n">w3</span> <span class="o">=</span> <span class="n">walks3d</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w3</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">],</span><span class="n">w3</span><span class="p">[:,</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">],</span><span class="n">w3</span><span class="p">[:,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_23_0.png" src="_images/Diffusion_23_0.png" />
+</div>
+</div>
+<p>Note how the scaling of the MSD with time changes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w1</span> <span class="o">=</span> <span class="n">walks1d</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">)</span>
+<span class="n">msd1d</span> <span class="o">=</span> <span class="p">(</span><span class="n">w1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">msd2d</span> <span class="o">=</span> <span class="p">((</span><span class="n">w2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">msd3d</span> <span class="o">=</span> <span class="p">((</span><span class="n">w3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nsteps</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">msd1d</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;1d&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">msd2d</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">msd3d</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;MSD&#39;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t/\Delta t$&#39;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Diffusion_25_0.png" src="_images/Diffusion_25_0.png" />
+</div>
+</div>
+<p>A geometrical coefficient varies from dimension to dimension:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1d:&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">msd1d</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2d:&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">msd2d</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3d:&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">msd3d</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1d: 1.963671083588359
+2d: 3.99682472439244
+3d: 5.974177426702672
+</pre></div>
+</div>
+</div>
+</div>
+<p>Indeed, the true scaling is</p>
+<div class="math notranslate nohighlight">
+\[MSD = (2d)\cdot D \cdot t\]</div>
+<p>This can be easily derived from the observation that a random walk in <span class="math notranslate nohighlight">\(d\)</span> dimensions is the composition of <span class="math notranslate nohighlight">\(d\)</span> independent random walks. For each component <span class="math notranslate nohighlight">\(x_i\)</span> we have that</p>
+<div class="math notranslate nohighlight">
+\[P(x_i\sim \mathcal{N}(0,\sigma)\]</div>
+<p>Hence</p>
+<div class="math notranslate nohighlight">
+\[\langle x_1^2+x_2^2+...+x_d^2\rangle = \sum_{i=1}^{d} \langle x_i\rangle=d\sigma^2=d \cdot (2D) \cdot t\]</div>
+</section>
+</section>
+<section id="langevin-equation">
+<h2>Langevin equation<a class="headerlink" href="#langevin-equation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="diffusion-in-liquids">
+<h2>Diffusion in liquids<a class="headerlink" href="#diffusion-in-liquids" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

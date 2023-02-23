@@ -9,7 +9,7 @@
 # $$
 # of a colloidal particle under the influence of an external force $\vec{F}$ and compute its mean square displacement $\langle |\Delta \vec{r}(t)|^2\rangle$. As usual, several non-interacting particles are simulated in parallel to improve the statistics. 
 
-# In[2]:
+# In[1]:
 
 
 import numpy
@@ -26,7 +26,7 @@ friction = 1.0
 k = 0.5
 T = 1.0
 dt = 0.04
-nsteps = int(3.0 / dt)
+nsteps = int(30.0 / dt)
 
 # Fluctuation dissipation relation
 D = T / friction

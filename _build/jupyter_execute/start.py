@@ -8,7 +8,7 @@
 # 
 # To plot a functions and data we use matplotlib, which works on lists and numpy arrays. Here we trace $y=x^2$
 
-# In[ ]:
+# In[1]:
 
 
 import numpy
@@ -20,7 +20,7 @@ plt.plot(x, x**2, '-o')
 
 # We can superpose several curves
 
-# In[ ]:
+# In[2]:
 
 
 y = 5 + 0.5 * x**2 
