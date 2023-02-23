@@ -283,12 +283,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authors">
+   Authors
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -300,6 +324,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authors">
+   Authors
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -312,6 +349,11 @@ title="Print to PDF"
 <p>This Handbook is a gentle, operative introduction to the physics of fluids.</p>
 <p>The theory of liquids is presented together with the simulation approaches that allow us to explore their structure and dynamics at the atomistic or molecular level.</p>
 <p>All code makes use of the <code class="docutils literal notranslate"><span class="pre">Python</span></code> library <code class="docutils literal notranslate"><span class="pre">atooms</span></code>, an expressive module for particle-based simulation and  analysis.</p>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">#</a></h2>
+<p>Daniele Coslovich, <a class="reference external" href="mailto:dcoslovich&#37;&#52;&#48;units&#46;it">dcoslovich<span>&#64;</span>units<span>&#46;</span>it</a></p>
+<p>Francesco Turci, <a class="reference external" href="mailto:f&#46;turci&#37;&#52;&#48;bristol&#46;ac&#46;uk">f<span>&#46;</span>turci<span>&#64;</span>bristol<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
