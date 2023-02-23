@@ -1,6 +1,6 @@
 # Handbook of Particle-Based Simulation of Fluids
 
-This Handbook is an gentle, operative introduction to the physics of fluids.
+This Handbook is a gentle, operative introduction to the physics of fluids.
 
 The theory of liquids is presented together with the simulation approaches that allow us to explore their structure and dynamics at the atomistic or molecular level.
 
