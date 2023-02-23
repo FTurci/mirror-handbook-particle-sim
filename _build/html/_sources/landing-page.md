@@ -1,4 +1,4 @@
-# Handbook of Particle-Based Simulation of Fluid
+# Handbook of Particle-Based Simulation of Fluids
 
 This Handbook is an gentle, operative introduction to the physics of fluids.
 

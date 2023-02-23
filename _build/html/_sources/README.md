@@ -1,4 +1,4 @@
-# handbook
+# Handbook of Particle-Based Simulation of Fluids
 
 An introduction to the computational physics of supercooled liquids and glasses.
 
@@ -10,4 +10,10 @@ Daniele Coslovich, dcoslovich@units.it
 Francesco Turci, f.turci@bristol.ac.uk
 
 
-## Building the 
+## Building the book
+
+Build from the repository folder directly thorugh the command
+
+```shell
+jupyter-book build ../handbook
+```
