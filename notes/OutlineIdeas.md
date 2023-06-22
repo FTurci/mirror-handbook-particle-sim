@@ -59,15 +59,12 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 ## Interactions and dynamics
 
 ### Particle-based molecular dynamics from scratch
-
 - levels of description: *ab initio*, atomistic force fields, coarse-grained interactions
-
 - virial expansion, virial coefficients and many-body interactions
 - Toy model: the Lennard-Jones potential
 - Forces vs Potentials: general ideas about Molecular Dynamics vs Monte-Carlo simulations
 - **(numerical)** start from identical configuration of a small system (N=200) of LJ particles and evolve it in MD (using a blackbox with no detail, e.g. `ASE`, possibly wrapped in `atooms`) and the Monte Carlo code above to explore basic differences
 - **(numerical)** the mean squared displacement: definition and connection with diffusivities. Comparison between MD and MC (using previously prepared trajectories and/or custom trajectories).
-
 - Hamiltonian equations of motion
 - The problem of discretisation
 - Energy in the system: internal, potential, kinetic and connection with the temperature
@@ -80,7 +77,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 - **(numerical)** implementing a Langevin thermostat with Euler-Maruyama
 
 ### Ensembles and coexistence 
-
 - Thermal equilibrium: the canonical ensemble and the isothermal-isobaric ensemble
 - **(numerical)** Calculating the average energy using Metropolis Monte-Carlo and a Langevin thermostat
 - The microcanonical ensemble
