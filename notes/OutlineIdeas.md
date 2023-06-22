@@ -92,7 +92,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 ##  Measuring correlations
 
 ### Quantifying static correlations 
-
 - radial distribution functions
 - angular correlations 
 - structural motifs and bond order
@@ -103,7 +102,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 - **(numerical)** Virial coefficients from small-box simulations
 
 ### Quantifying dynamical correlations
-
 - intermediate scattering functions
 - **(numerical)** Algorithm for the self part of the intermediate scattering function + `atooms.postprocessing`
 - Relaxation times and viscosities
@@ -126,8 +124,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 - **(numerical)** A simple model for water : mW
 - **(numerical)** A refined model for water: TIP4P using `lammps` 
 - **(numerical)** Comparison of structure and dynamics between TIP4P and mW
-
-   
 
 ##  Soft-matter fluids
 
