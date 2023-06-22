@@ -97,7 +97,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 - angular correlations 
 - structural motifs and bond order
 - virial coefficients
-
 - **(numerical)** Implementing 2 and 3-body correlation functions
 - **(numerical)** Voronoi tessellations
 - **(numerical)** Bond-order parameters
@@ -124,11 +123,8 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 ### The case of water
 
 - Coarse-grained potentials: the case of water
-
 - **(numerical)** A simple model for water : mW
-
 - **(numerical)** A refined model for water: TIP4P using `lammps` 
-
 - **(numerical)** Comparison of structure and dynamics between TIP4P and mW
 
    
@@ -145,13 +141,11 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 ### Coarse-grained models of polymers
 
 - Models of interacting polymers, entanglement and topology
-
 - **(numerical)** FENE model of a liquid of short polymeric chains  
 
 ### Colloid-polymer mixtures
 
 - Coarse-graining and depletion forces
-
 - **(numerical)** Explore depletion forces for a hard-sphere fluid in a rigid box
 - **(numerical)** Explicit-solvent simulation of a colloid-polymer mixture
 - **(numerical)** Asakura-Oosawa model  of a colloid-polymer mixture
@@ -162,7 +156,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 
 - Metastability: lifetimes and time averages
 - Homogeneous nucleation
-
 - Heterogeneous nucleation
 - **(numerical)** Seeding a crystal
 
@@ -171,7 +164,6 @@ We then follow the example of Widom (cite) and take two limit models to illustra
 - Coarsening and growth laws
 - **(numerical)** Simple demonstration using Ising-model
 - Spinodal and mechanical stability
-
 - **(numerical)** Illustration of a gel coarsening using the Morse potential
 
 ### Glass transition
