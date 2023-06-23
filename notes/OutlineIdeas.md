@@ -23,22 +23,23 @@
 - Polymers as a random walk 
 - **(numerical)** Noninteracting bead-spring model of a single polymer
 
+## Kinetics of gases
+
+- The ideal gas and the Maxwell-Boltzmann distribution
+- **(numerical)** Naive algorithm for the simulation of the collisional dynamics of an ideal gas in a box
+- **(numerical)** Direct measurement of pressure from the momentum transfererd to the walls
+- Interacting particles and Van-der Waals's equation of state
+- Maxwell's construction for phase equilibria
+- **(numerical)** code for the visualisation of Maxwell's construction
+
 
 ## Approaching the liquid state
 
 
 ### Phase diagram of simple substances
 
-- We recall the notion of macroscopic phases of matter
+- Phases of matter and phase transitions 
 - We contrast a complex example (e.g. water) with a simpler one (argon) to justify our initial focus on simple systems
-
-### Van der Waals equation
-
-- We recall the ideal gas law 
-- We present Van der Waals's approach stressing, introducing the notion of mean-field theory
-- We summarise its key features, successes and failures
-- Maxwell's construction for phase equilibria
-- **(numerical)** code for the visualisation of Maxwell's construction
 
 We then follow the example of Widom (cite) and take two limit models to illustrate the behaviour of fluids around and away from the critical point.
 
