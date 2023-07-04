@@ -27,7 +27,7 @@
 
 - The ideal gas and the Maxwell-Boltzmann distribution
 - **(numerical)** Naive algorithm for the simulation of the collisional dynamics of an ideal gas in a box
-- **(numerical)** Direct measurement of pressure from the momentum transfererd to the walls
+- **(numerical)** Direct measurement of pressure from the momentum transfer to the walls
 - Interacting particles and Van-der Waals's equation of state
 - Maxwell's construction for phase equilibria
 - **(numerical)** code for the visualisation of Maxwell's construction
