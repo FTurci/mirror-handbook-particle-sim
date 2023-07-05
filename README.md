@@ -11,4 +11,4 @@
   - [ ] (C) double well pootential: FFS
   - [X] Reference list + internal links
   - [X] Fix environment
-  - [ ] Cleanup the notebooks with https://github.com/kynan/nbstripout and removing the checkpoints
+  - [X] Cleanup the notebooks with https://github.com/kynan/nbstripout and removing the checkpoints
