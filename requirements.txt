@@ -1,4 +1,5 @@
 numpy
+docutils==0.17.1
 jupyter
 jupyter-book
 matplotlib
