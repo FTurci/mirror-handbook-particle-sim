@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Diffusion &#8212; Handbook of Particle-Based Simulation of Fluids</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,388 +63,284 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Diffusion';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="landing-page.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Handbook of Particle-Based Simulation of Fluids</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="landing-page.html">
-                    Handbook of Particle-Based Simulation of Fluid
+                    Handbook of Particle-Based Simulation of Fluids
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="start.html">
-   Jupyter notebook: first ride
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="brownian.html">
-   Brownian dynamics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="rw.html">
-   Random walk
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="saw.html">
-   Self-avoiding walk (SAW)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dna.html">
-   Force-extension relation in DNA chains
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fit.html">
-   Least-square fits with python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="interactions.html">
-   Van der Waals interactions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="supercooled.html">
-   Supercooled liquids
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="statics.html">
-   Static correlation functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dynamics.html">
-   Dynamic correlation functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="active.html">
-   Active Brownian particles
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Jupyter notebook: first ride</a></li>
+<li class="toctree-l1"><a class="reference internal" href="brownian.html">Brownian dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rw.html">Random walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saw.html">Self-avoiding walk (SAW)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dna.html">Force-extension relation in DNA chains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fit.html">Least-square fits with python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="interactions.html">Van der Waals interactions</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="supercooled.html">Supercooled liquids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statics.html">Static correlation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamics.html">Dynamic correlation functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="active.html">Active Brownian particles</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Diffusion.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Diffusion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Diffusion.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discrete-random-walk">
-   Discrete random walk
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-dimensional-case">
-     One-dimensional case
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#average-position-and-standard-deviation">
-       Average position and standard deviation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-and-higher-dimensional-case">
-     Two and higher dimensional case
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#langevin-equation">
-   Langevin equation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diffusion-in-liquids">
-   Diffusion in liquids
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Diffusion</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discrete-random-walk">
-   Discrete random walk
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-dimensional-case">
-     One-dimensional case
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#average-position-and-standard-deviation">
-       Average position and standard deviation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-and-higher-dimensional-case">
-     Two and higher dimensional case
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#langevin-equation">
-   Langevin equation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diffusion-in-liquids">
-   Diffusion in liquids
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diffusion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-random-walk">Discrete random walk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-case">One-dimensional case</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#average-position-and-standard-deviation">Average position and standard deviation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-and-higher-dimensional-case">Two and higher dimensional case</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langevin-equation">Langevin equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-liquids">Diffusion in liquids</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="diffusion">
-<h1>Diffusion<a class="headerlink" href="#diffusion" title="Permalink to this headline">#</a></h1>
+<h1>Diffusion<a class="headerlink" href="#diffusion" title="Permalink to this heading">#</a></h1>
 <p>In the <em>De Rerum Natura</em> (Book II) Lucretius (c. 99 – c. 55 BC) attempts to demonstrate the existence of atoms through the observation of the jittering motion of dust particles in the air. He notices their random, unpredictable, <em>stochastic</em> motion: the particles do not move in straight or regular lines, and instead a <em>chaotic</em> movement is observed. This demonstrates, in Lucretius’s eyes, the key role pllayed by chaos in the emergence of the world as we know it.</p>
 <p>Much later, similar observations on the haphazard motion of pollen and dust in water were made by Scottish botanist Robert Brown in th 19th century, from whom the term of <em>Brownian motion</em> traces its origin.</p>
 <p>The description of this <em>unpredictable</em> kind of motion requires to make steps towards a probabilistic physical description. This connects the motion of invidual particles (which can be deterministic) to the motion of collections of particles, which is described statistically.</p>
@@ -442,9 +349,9 @@ title="Print to PDF"
 \[\frac{\partial c}{\partial t} = D \nabla^2 c,\]</div>
 <p>where <span class="math notranslate nohighlight">\(D\)</span> is known as the <strong>diffusion coefficient</strong> and <span class="math notranslate nohighlight">\(\nabla^2\)</span> is the Laplacian operator. This equation can be derived using a simple model: <em>Brownian motion</em>.</p>
 <section id="discrete-random-walk">
-<h2>Discrete random walk<a class="headerlink" href="#discrete-random-walk" title="Permalink to this headline">#</a></h2>
+<h2>Discrete random walk<a class="headerlink" href="#discrete-random-walk" title="Permalink to this heading">#</a></h2>
 <section id="one-dimensional-case">
-<h3>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this headline">#</a></h3>
+<h3>One-dimensional case<a class="headerlink" href="#one-dimensional-case" title="Permalink to this heading">#</a></h3>
 <p>A grain of pollen immersed in a fluid like air can be thought as a large particle constantly hit by many much smaller particles that travel rapidly in all directions. At every collision, they exchange momentum with the larger particle, changing its direction of motion.</p>
 <p>The simplest possible model for this kind of movement is discrete Brownian motion.  Imagine to have a particle at position <span class="math notranslate nohighlight">\(x=0\)</span> and to discretize time by timesteps <span class="math notranslate nohighlight">\(\Delta t\)</span>. At every step, the particle can move left or right with equal probability and travels a fixed distance <span class="math notranslate nohighlight">\(l\)</span>.</p>
 <p>Hence:
@@ -458,7 +365,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">walks1d</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span><span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># we generate an (nsteps x nwalkers) table of -1 or 1 values</span>
     <span class="k">return</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># we sum the table along the nsteps axis</span>
 <span class="n">collection</span> <span class="o">=</span> <span class="n">walks</span><span class="p">()</span>
@@ -468,12 +375,12 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_3_0.png" src="_images/Diffusion_3_0.png" />
+<img alt="_images/a1f20a1e10484075386111b0ca16dc56a89d388371aa2b61c432208559560e7c.png" src="_images/a1f20a1e10484075386111b0ca16dc56a89d388371aa2b61c432208559560e7c.png" />
 </div>
 </div>
 <p>As we have a <strong>collection</strong> of walks we can compute statistical descriptors.</p>
 <section id="average-position-and-standard-deviation">
-<h4>Average position and standard deviation<a class="headerlink" href="#average-position-and-standard-deviation" title="Permalink to this headline">#</a></h4>
+<h4>Average position and standard deviation<a class="headerlink" href="#average-position-and-standard-deviation" title="Permalink to this heading">#</a></h4>
 <p>During the evolution, the walkers get farther and farther from the original position at x=0. Their distribution becomes more and more spread out. A simple way to characterise the spreading of the distribution is to measure its first and second moments:</p>
 <ul class="simple">
 <li><p>the average position <span class="math notranslate nohighlight">\(\mu(t)\langle x\rangle(t)\)</span></p></li>
@@ -490,7 +397,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_5_0.png" src="_images/Diffusion_5_0.png" />
+<img alt="_images/b61941ece9e6525f7e9e874ea61cd8c3e60a1f38d2208d62ed0028be3cb01398.png" src="_images/b61941ece9e6525f7e9e874ea61cd8c3e60a1f38d2208d62ed0028be3cb01398.png" />
 </div>
 </div>
 <p>Clearly, the average position fluctuates around zero compared to the characteristic standard deviation.</p>
@@ -505,7 +412,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_7_0.png" src="_images/Diffusion_7_0.png" />
+<img alt="_images/03f884f939dba67a1b8fb0a6424dffb918bf533865fbb1c7623340457d9a3175.png" src="_images/03f884f939dba67a1b8fb0a6424dffb918bf533865fbb1c7623340457d9a3175.png" />
 </div>
 </div>
 <p>Thi is a characteristic of diffusive, Brownian motion. <span class="math notranslate nohighlight">\(\sigma^2(t)=\langle x^2\rangle(t)=\langle [x(t)-x(0)]^2\rangle\)</span> is the <strong>mean squared displacement (MSD)</strong>  and it scales like</p>
@@ -541,7 +448,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_13_0.png" src="_images/Diffusion_13_0.png" />
+<img alt="_images/0d66b9f52c568b42212db234dfb5e5cc2d7d55ff11e3d87dcdcc67e1b75ca011.png" src="_images/0d66b9f52c568b42212db234dfb5e5cc2d7d55ff11e3d87dcdcc67e1b75ca011.png" />
 </div>
 </div>
 <p>With increasing the number of walkers the histogram convergess to a shape that is reminiscent of a Gaussian distribution. Can we numerically test this?</p>
@@ -565,7 +472,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa1cff64d90&gt;
 </pre></div>
 </div>
-<img alt="_images/Diffusion_16_1.png" src="_images/Diffusion_16_1.png" />
+<img alt="_images/ffccae97eba08379c6a796f5c9e58a4770ad9f481726c2e3ac61d146b1eb0b89.png" src="_images/ffccae97eba08379c6a796f5c9e58a4770ad9f481726c2e3ac61d146b1eb0b89.png" />
 </div>
 </div>
 <p>With increasing the numeber of samples, convergence to a Gaussian is ensured. Hence, we conclude that the distribution of displacements takes the form</p>
@@ -589,19 +496,19 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_18_0.png" src="_images/Diffusion_18_0.png" />
+<img alt="_images/8ffeddfe3b258d296b2403b7a326f2d0d64b3c573965cc16914f31d887a68058.png" src="_images/8ffeddfe3b258d296b2403b7a326f2d0d64b3c573965cc16914f31d887a68058.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="two-and-higher-dimensional-case">
-<h3>Two and higher dimensional case<a class="headerlink" href="#two-and-higher-dimensional-case" title="Permalink to this headline">#</a></h3>
+<h3>Two and higher dimensional case<a class="headerlink" href="#two-and-higher-dimensional-case" title="Permalink to this heading">#</a></h3>
 <p>The generalisation of random walks to highher dimensions is straightforward.</p>
 <p>For example in two dimensions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walks2d</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span><span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> 
     <span class="k">return</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># </span>
 
@@ -613,14 +520,14 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_21_0.png" src="_images/Diffusion_21_0.png" />
+<img alt="_images/d9bde96d0e7caf232a2263c1a28063c2e4807d8d42a48e8859568c6aa0f2dd12.png" src="_images/d9bde96d0e7caf232a2263c1a28063c2e4807d8d42a48e8859568c6aa0f2dd12.png" />
 </div>
 </div>
 <p>And in three:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">walks3d</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span><span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate nwalkers random walks from x=0 evolving for nsteps.&quot;&quot;&quot;</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nsteps</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> 
     <span class="k">return</span> <span class="n">steps</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
 
@@ -632,7 +539,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_23_0.png" src="_images/Diffusion_23_0.png" />
+<img alt="_images/503884e7ee129765ac685fe442b9368366ca597f7791e657dc605ecb55af5211.png" src="_images/503884e7ee129765ac685fe442b9368366ca597f7791e657dc605ecb55af5211.png" />
 </div>
 </div>
 <p>Note how the scaling of the MSD with time changes:</p>
@@ -651,7 +558,7 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Diffusion_25_0.png" src="_images/Diffusion_25_0.png" />
+<img alt="_images/baa025ab5cd8cef004425dac89e7b6e6cccdee2e7825c56b6112e60157989468.png" src="_images/baa025ab5cd8cef004425dac89e7b6e6cccdee2e7825c56b6112e60157989468.png" />
 </div>
 </div>
 <p>A geometrical coefficient varies from dimension to dimension:</p>
@@ -684,10 +591,10 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
 </section>
 </section>
 <section id="langevin-equation">
-<h2>Langevin equation<a class="headerlink" href="#langevin-equation" title="Permalink to this headline">#</a></h2>
+<h2>Langevin equation<a class="headerlink" href="#langevin-equation" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="diffusion-in-liquids">
-<h2>Diffusion in liquids<a class="headerlink" href="#diffusion-in-liquids" title="Permalink to this headline">#</a></h2>
+<h2>Diffusion in liquids<a class="headerlink" href="#diffusion-in-liquids" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -711,36 +618,96 @@ where \)</span>\xi_t<span class="math notranslate nohighlight">\( is a random va
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-random-walk">Discrete random walk</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-dimensional-case">One-dimensional case</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#average-position-and-standard-deviation">Average position and standard deviation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-and-higher-dimensional-case">Two and higher dimensional case</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langevin-equation">Langevin equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusion-in-liquids">Diffusion in liquids</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By The Jupyter Book community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
