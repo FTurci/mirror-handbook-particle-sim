@@ -3,3 +3,5 @@ title: "Handbook of Particle-Based Simulation of Fluids"
 logo: images/logo.svg
 execute:
   execute_notebooks: "off"
+# exclude_patterns: ['_build', 'env*', '**.ipynb_checkpoints']
+only_build_toc_files: true
