@@ -9,6 +9,6 @@
   - [ ] (T) Fokker-Planck? Smoluchowski 
   - [ ] (C) double well potential : brute force -- done
   - [ ] (C) double well pootential: FFS
-  - [ ] Reference list + internal links
-  - [ ] Cleanup the notebooks with https://github.com/kynan/nbstripout and removing the checkpoints
+  - [X] Reference list + internal links
   - [X] Fix environment
+  - [ ] Cleanup the notebooks with https://github.com/kynan/nbstripout and removing the checkpoints

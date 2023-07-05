@@ -8,3 +8,4 @@ atooms>=3.3.4
 atooms-pp
 atooms-dynamics
 py3dmol
+nbstripout
