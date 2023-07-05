@@ -21,13 +21,13 @@ jupyter-book build ../handbook
 # Goals for Trieste
 
 - chapter 1: diffusion 
-  - [ ] (T) theory rw --- done
-  - [ ] (C) notebook on random walks  --- done
+  - [X] (T) theory rw
+  - [X] (C) notebook on random walks
   - [ ] (T) theory Langevin
-  - [ ] (C) notebook with `numpy` --- done
-  - [ ] (C) notebook with ` atooms` (possibly `numpy-->atooms`) --- done
+  - [X] (C) notebook with `numpy`
+  - [X] (C) notebook with ` atooms` (possibly `numpy-->atooms`)
   - [ ] (T) Fokker-Planck? Smoluchowski 
-  - [ ] (C) double well potential : brute force -- done
+  - [X] (C) double well potential : brute force
   - [ ] (C) double well pootential: FFS
   - [X] Reference list + internal links
   - [X] Fix environment
