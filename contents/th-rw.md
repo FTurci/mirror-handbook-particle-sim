@@ -50,9 +50,15 @@ In one dimension, eq.{eq}`rw` represents the motion of a particle on a line, kic
 
 As the process is stochastic, the position of the particle at a given time $t=n\Delta t$ is also a random variable. Therefore, the key quantity of interest is the probability distribution $P(x_t|x_0)$, i.e. the probability to find the particle at position $x$ at time $t$ knowing that the initial position was $x_0$.
 
+Let us take a general case where the probability to move right is $p$ and the probability to move right is $q=1-p$. 
 
 
 
+
+### Projects:
+- A
+- B
+#### Sub-Projects
 
 
 
