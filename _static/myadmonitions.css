@@ -1,0 +1,14 @@
+div.history {
+    border-left-color: rgb(250, 242, 21);
+}
+div.history .admonition-title {
+    background-color: rgba(246, 238,0);
+}
+div.history .admonition-title:before {
+    color: rgba(246, 238,0);
+    /* content: '\f19d'; */
+}
+
+div.history .admonition-title:after {
+    display: none;
+}
