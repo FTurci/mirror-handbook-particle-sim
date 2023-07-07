@@ -46,7 +46,11 @@ Here we characterise the key properties of random walks, and we do so by focusin
 
 ## One dimensional motion and its statistics
 
-In one dimension, eq.{eq}`rw` illustrates the motion of a particle on a line, kicked to the left or the right with equal proability and always performing a step of length $\ell$.
+In one dimension, eq.{eq}`rw` represents the motion of a particle on a line, kicked to the left or the right with equal proability and performing steps of length $\ell$.
+
+As the process is stochastic, the position of the particle at a given time $t=n\Delta t$ is also a random variable. Therefore, the key quantity of interest is the probability distribution $P(x_t|x_0)$, i.e. the probability to find the particle at position $x$ at time $t$ knowing that the initial position was $x_0$.
+
+
 
 
 
