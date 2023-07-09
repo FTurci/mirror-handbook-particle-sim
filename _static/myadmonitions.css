@@ -1,5 +1,6 @@
+/* History boxes */
 div.history {
-    border-left-color: rgb(250, 242, 21);
+    border-left-color: rgba(246, 238,0);
 }
 div.history .admonition-title {
     background-color: rgba(246, 238,0);
@@ -10,5 +11,21 @@ div.history .admonition-title:before {
 }
 
 div.history .admonition-title:after {
+    display: none;
+}
+
+/* Proof boxes */
+div.proof {
+    border-left-color: rgba(85, 131, 154, 0.695);
+}
+div.proof .admonition-title {
+    background-color: rgba(85, 131, 154, 0.695);
+}
+div.proof .admonition-title:before {
+    color: rgba(85, 131, 154, 0.695);
+    /* content: '\f19d'; */
+}
+
+div.proof .admonition-title:after {
     display: none;
 }
