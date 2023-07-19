@@ -16,13 +16,13 @@ div.history .admonition-title:after {
 
 /* Proof boxes */
 div.proof {
-    border-left-color: rgba(85, 131, 154, 0.695);
+    border-left-color: rgba(64, 191, 255, 0.328);
 }
 div.proof .admonition-title {
-    background-color: rgba(85, 131, 154, 0.695);
+    background-color: rgba(64, 191, 255, 0.328);
 }
 div.proof .admonition-title:before {
-    color: rgba(85, 131, 154, 0.695);
+    color: rgba(64, 191, 255, 0.328);
     /* content: '\f19d'; */
 }
 
