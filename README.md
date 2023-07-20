@@ -18,14 +18,19 @@ Build from the repository folder directly thorugh the command
 jupyter-book build ../handbook
 ```
 
-# Goals for Trieste
+## Recent additions
 
+- Notebook on random walks
+- Interactive launcher via `Binder+Github`
+
+<!--
+# Goals for Trieste
 - chapter 1: diffusion 
   - [X] (T) theory rw
   - [X] (C) notebook on random walks
   - [ ] (T) theory Langevin
   - [X] (C) notebook with `numpy`
-  - [X] (C) notebook with ` atooms` (possibly `numpy-->atooms`)
+  - [X] (C) notebook with ` atooms` (possibly `numpy->atooms`
   - [ ] (T) Fokker-Planck? Smoluchowski 
   - [X] (C) double well potential : brute force
   - [ ] (C) double well pootential: FFS
@@ -33,3 +38,9 @@ jupyter-book build ../handbook
   - [X] Fix environment
   - [X] Cleanup the notebooks with https://github.com/kynan/nbstripout and removing the checkpoints
   - [X] Fix CI
+- Item 1 
+- Item 2
+- Item 3
+-->
+
+

@@ -1,12 +1,12 @@
 /* History boxes */
 div.history {
-    border-left-color: rgba(246, 238,0);
+    border-left-color: rgba(230, 223, 38, 0.76);
 }
 div.history .admonition-title {
-    background-color: rgba(246, 238,0);
+    background-color: rgba(230, 223, 38, 0.76);
 }
 div.history .admonition-title:before {
-    color: rgba(246, 238,0);
+    color: rgba(230, 223, 38, 0.76);
     /* content: '\f19d'; */
 }
 
@@ -27,5 +27,22 @@ div.proof .admonition-title:before {
 }
 
 div.proof .admonition-title:after {
+    display: none;
+}
+
+
+/* Key concepts boxes */
+div.key {
+    border-left-color: rgba(12, 204, 54, 0.328);
+}
+div.key .admonition-title {
+    background-color: rgba(12, 204, 54, 0.328);
+}
+div.key .admonition-title:before {
+    color: rgba(12, 204, 54, 0.328);
+    /* content: '\f19d'; */
+}
+
+div.key .admonition-title:after {
     display: none;
 }

@@ -12,3 +12,15 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year
+
+
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/FTurci/mirror-handbook-particle-sim.git  # Online location of your book
+  path_to_book              : _build/html/  # Optional path to your book, relative to the repository root
+  branch                    : master  # Which branch of the repository should be used when creating links (optional)
+launch_buttons:
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+
+launch_buttons:
+  thebe                  : true
