@@ -5,9 +5,9 @@ An introduction to the computational physics of supercooled liquids and glasses.
 
 ## Authors
 
-Daniele Coslovich, dcoslovich@units.it
+Daniele Coslovich
 
-Francesco Turci, f.turci@bristol.ac.uk
+Francesco Turci
 
 
 ## Building the book
