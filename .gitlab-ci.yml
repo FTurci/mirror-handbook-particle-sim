@@ -5,6 +5,7 @@ pages:
       - public
   script:
     - mkdir -p public
+    - rm -rf public/*
     - pip install jupyter-book
     - jupyter-book build ../handbook
     - mv _build/* public/
