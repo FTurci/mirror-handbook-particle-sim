@@ -5,6 +5,7 @@ chapters:
 - file: contents/introduction
 # - file: contents/th-rw
 - file: contents/rw
+- file: contents/rw-clean
 - file: contents/diffusion
 - file: contents/brownian
 - file: contents/saw
