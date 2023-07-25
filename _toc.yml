@@ -5,6 +5,9 @@ chapters:
 - file: contents/introduction
 # - file: contents/th-rw
 - file: contents/rw
+  sections:
+  - file: contents/rw-code
+  - file: contents/rw-probs
 - file: contents/diffusion
 - file: contents/brownian
 - file: contents/saw
