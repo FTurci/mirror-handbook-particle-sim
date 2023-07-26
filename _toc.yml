@@ -8,7 +8,6 @@ chapters:
   sections:
   - file: contents/rw-code
   - file: contents/rw-probs
-- file: contents/diffusion
 - file: contents/brownian
 - file: contents/saw
 - file: contents/dna
