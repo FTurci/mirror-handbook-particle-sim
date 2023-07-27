@@ -10,6 +10,6 @@ All code makes use of the `Python` library `atooms`, an expressive module for pa
 
 ## Authors
 
-Daniele Coslovich, dcoslovich@units.it
+Daniele Coslovich
 
-Francesco Turci, f.turci@bristol.ac.uk  
+Francesco Turci
