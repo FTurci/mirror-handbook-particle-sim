@@ -8,6 +8,7 @@ pages:
     - rm -rf public/*
     - pip install jupyter-book
     - pip install docutils==0.17.1
+    - pip install sphinxcontrib-mermaid
     - jupyter-book build ../handbook
     - mv _build/* public/
   only:
