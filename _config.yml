@@ -22,6 +22,5 @@ repository:
   branch                    : master  # Which branch of the repository should be used when creating links (optional)
 launch_buttons:
   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
-
-launch_buttons:
+  colab_url: "https://colab.research.google.com"
   thebe                  : true
