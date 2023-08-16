@@ -2,6 +2,7 @@
 format: jb-book
 root: contents/landing-page
 chapters:
+- file: contents/howto
 - file: contents/introduction
 # - file: contents/th-rw
 - file: contents/rw
