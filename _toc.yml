@@ -10,6 +10,8 @@ chapters:
   - file: contents/rw-code
   - file: contents/rw-probs
 - file: contents/langevin
+  sections:
+  - file: contents/langevin-probs
 - file: contents/saw
 - file: contents/dna
 - file: contents/fit
