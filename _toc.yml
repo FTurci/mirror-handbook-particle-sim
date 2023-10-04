@@ -11,6 +11,7 @@ chapters:
   - file: contents/rw-probs
 - file: contents/langevin
   sections:
+  - file: contents/langevin-code-kramers
   - file: contents/langevin-probs
 - file: contents/saw
 - file: contents/dna
