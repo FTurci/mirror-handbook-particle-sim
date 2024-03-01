@@ -13,6 +13,7 @@ chapters:
   sections:
   - file: contents/langevin-code-kramers
   - file: contents/langevin-probs
+- file: contents/ideal-chain
 - file: contents/saw
 - file: contents/dna
 - file: contents/fit
